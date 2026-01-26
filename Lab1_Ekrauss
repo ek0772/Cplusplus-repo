@@ -1,0 +1,21 @@
+/**
+ * @file Lab1_Ekrauss.cpp
+ * @author Elijah Krauss
+ * @date 2026-01-25
+ * @brief A simple program to output the user's full name.
+ */
+#include<iostream>
+#include<string>
+using namespace std;
+
+
+int main()
+{
+    string firstname;
+    string lastname;
+    cout << "Enter your first name: ";
+    cin >> firstname;
+    cout << "Enter your last name: ";
+    cin >> lastname;
+    std::cout << "Welcome to C++ Programming," << firstname << " " << lastname << "!" << std::endl;
+}
