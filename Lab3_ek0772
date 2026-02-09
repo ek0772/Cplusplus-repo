@@ -1,0 +1,51 @@
+/**
+ *@file Lab3_ek0772.cpp
+ * @author Elijah K
+ * @date 2026-02-08
+ * @brief A menu-driven program to calculate areas of rectangles and circles.
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int program_option;
+float radius;
+float height;
+float length;
+float rectangle_area;
+float circle_area;
+const double PI = 3.14159;
+
+int main() {
+cout << "1. Calculate area of rectangle" << endl;
+cout << "2. Calculate area of circle" << endl;
+cout << "3. Quit" << endl;
+cout << "Please make a menu selection:" << endl;
+
+cin >> program_option;
+
+switch (program_option) {
+    case 1:
+        cout << "Please enter the length of the rectangle:" << endl;
+        cin >> length;
+        cout << "Please enter the height of the rectangle:" << endl;
+        cin >> height;
+        rectangle_area = length * height;
+        cout << "The area of the rectangle is: " << rectangle_area << endl;
+        break;
+    case 2:
+        cout << "Please enter the radius of the circle:" << endl;
+        cin >> radius;
+        circle_area = PI * radius * radius;
+        cout << "The area of the circle is: " << circle_area << endl;
+        break;
+    case 3:
+        cout << "Goodbye!" << endl;
+        break;
+    default:
+        cout << "Invalid option." << endl;
+        break;
+    return 0;
+}
+}
