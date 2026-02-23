@@ -10,48 +10,42 @@
 using namespace std;
 int input, maxDigit, shiftingnum;
 
-
-void printInputValidationError() {
 /**
  * @brief: Error output for invalid input.
  * @param: None.
  * @return: None (void).
  */
+void printInputValidationError() {
 cout << "Invalid input. The digit must be greater than 4 and less than 10 " << endl;
-
-
-
 }
-bool isMaxDigitInputValid(int input) {
 /**
  * @brief: Validates that user input is within the acceptable range
  * @param: input - The user-provided integer to validate.
  * @return: true if the input falls within the strict exclusive range (4,10)
  */
+bool isMaxDigitInputValid(int input) {
 return (input > 4 && input < 10);
 }
-
-int getMaxDigitInput() {
     /**
  * @brief: Prompts user for input and ensures it is valid.
  * @param: None.
  * @return: A validated int representing the maximum digit.
  */
+int getMaxDigitInput() {
 cout << "Enter the maximum digit for the multiplication table: " << endl;
 cin >> input;
-
 while (!isMaxDigitInputValid(input)) {
     printInputValidationError();
     cin >> input;
 }
 return input;
 }
-void printMultiplicationTable(int maxDigit) {
 /**
  * @brief: Prints the formatted multiplication table.
  * @param: maxDigit - The highest digit to include in the table.
  * @return: None (void).
  */
+void printMultiplicationTable(int maxDigit) {
 int shiftingnum = 1;
 while (shiftingnum < maxDigit+1) {
     cout << shiftingnum * 1 << "\t"
@@ -66,15 +60,13 @@ while (shiftingnum < maxDigit+1) {
     cout << endl;
     shiftingnum++;
 }
-
 } 
-
-int main() {
 /**
  * @brief: Entry point of the program.
  * @param: None.
  * @return: 0 to indicate success
  */
+int main() {
 int input;
 int maxDigit = getMaxDigitInput();
 isMaxDigitInputValid(input);
