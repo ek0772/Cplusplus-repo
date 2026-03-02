@@ -1,0 +1,118 @@
+/**
+ * @file Lab6_ek0772
+ * @author ek0772
+ * @date 2025-03-1
+ * @brief Compare static arrays and vectors for processing student scores
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+int findMax(const int staticArray[], int maxVal) {
+/**
+ * @brief Calculates the max value in the array
+ * @param None.
+ * @return None (void).
+ */
+int i;
+for (i = 0; i < 10; ++i) {
+    if (staticArray[i] > maxVal) {
+        maxVal = staticArray[i];
+        cout << maxVal;
+        return maxVal;
+}
+}
+}
+
+float calculateAverage(const int staticArray[], int size) {
+/**
+ * @brief
+ * @param
+ * @return
+ */
+int sum=0;
+int i;
+int average;
+for (i = 0; i < 10;) {
+    sum=sum+staticArray[i];
+    i=i+1;
+average=sum/10;
+}
+}
+
+int findMin(const int staticArray[], int size) {
+/**
+ * @brief
+ * @param
+ * @return
+ */
+int i;
+minVal;
+for (i = 0; i < 10; ++i) {
+    if (staticArray[i] < minVal) {
+        minVal = staticArray[i];
+        cout << minVal;
+        return minVal;
+}
+}
+}
+
+
+ 
+
+/**
+ * @brief
+ * @param
+ * @return
+ */
+
+
+
+
+
+
+
+
+
+
+void arraySolution() {
+/**
+ * @brief Calculates the statistics using arrays
+ * @param None.
+ * @return None (void).
+ */
+int staticArray[10];
+int inputsGiven=0;
+int score;
+int i;
+for (i = 0; i < 10;) {
+    cin >> score;
+    if (score>0 && score<101) {
+        staticArray[i]=score;
+        i=i+1;
+    }
+    else {
+        cin >> score;
+    }
+}
+int findMax(const int staticArray[], int maxVal);
+}
+int main() {
+ /**
+ * @brief This is the main page of the program, allowing for user choice
+ * @param
+ * @return
+ */
+int choice;
+cin >> choice;
+if (choice==1) {
+    cout << "choice 1" <<endl;
+    arraySolution();
+}
+else if (choice==2) {
+    cout << "choice 2" <<endl;
+}
+else {
+return 0;
+}
+}
