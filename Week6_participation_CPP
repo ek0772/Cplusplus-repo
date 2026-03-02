@@ -1,0 +1,8 @@
+The Week 6 lab’s solution is to code a static array solution and vector
+solution to perform calculations on a collection of student grades.
+For this week’s Participation Activity, submit a simple cost/benefit
+analysis of using vectors instead of arrays. This can be as simple as
+listing pros vs cons.
+
+
+Arrays and Vectors are vastly different, yet also functionally similar, and each have their own weaknesses and strenghts. With an array, for example, the static nature of them allows a lot of easy calculational shortcuts, such as just using the integer 10 for a fixed list of 10 items, rather than constantly needing to retreive the number of values. Yet using vectors instead of arrays allows for much greater flexibility, for a wide variety of sitations where a dataset can change in size. This increased functionality comes at a price though, as they can be more compliated than a simple array. Thankfully, there are different syntaxes that can be used to easily append or remove values from a vector, and the complexity isnt a super steep hill to overcome. They are considered higher level, so they need a higher level of understanding to work with, but when done right, can be an increcibly poweful tool for a variety of programming situations. They are slightly slower, but just slightly, and the benefits far outweigh the costs in my opinion.

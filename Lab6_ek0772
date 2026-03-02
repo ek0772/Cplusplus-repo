@@ -6,74 +6,58 @@
  */
 #include <iostream>
 #include <string>
+#include <algorithm>
+#include <vector>
 using namespace std;
+int size=10;
 
-int findMax(const int staticArray[], int maxVal) {
+int findMax(const int staticArray[], int size) {
 /**
  * @brief Calculates the max value in the array
- * @param None.
+ * @param Confined to the static array, based on its size.
  * @return None (void).
  */
 int i;
-for (i = 0; i < 10; ++i) {
+int maxVal = staticArray[0];
+for (i = 0; i < size; ++i) {  
     if (staticArray[i] > maxVal) {
         maxVal = staticArray[i];
-        cout << maxVal;
-        return maxVal;
+    }
 }
-}
+return maxVal;
 }
 
 float calculateAverage(const int staticArray[], int size) {
 /**
- * @brief
- * @param
- * @return
+ * @brief Calculates the average from all 10 values
+ * @param Confined to the static array, based on its size.
+ * @return The average value
  */
 int sum=0;
 int i;
-int average;
-for (i = 0; i < 10;) {
+for (i = 0; i < size;) {
     sum=sum+staticArray[i];
     i=i+1;
-average=sum/10;
 }
+int average=sum/10;
+return average;
 }
 
 int findMin(const int staticArray[], int size) {
 /**
- * @brief
- * @param
- * @return
+ * @brief Calculates the minimum value from the array
+ * @param Confined to the static array, based on its size.
+ * @return Minimum value.
  */
+int minVal = staticArray[0];
 int i;
-minVal;
-for (i = 0; i < 10; ++i) {
+for (i = 0; i < size; ++i) {
     if (staticArray[i] < minVal) {
         minVal = staticArray[i];
-        cout << minVal;
-        return minVal;
+    }
 }
+return minVal;
 }
-}
-
-
- 
-
-/**
- * @brief
- * @param
- * @return
- */
-
-
-
-
-
-
-
-
-
 
 void arraySolution() {
 /**
@@ -82,37 +66,120 @@ void arraySolution() {
  * @return None (void).
  */
 int staticArray[10];
-int inputsGiven=0;
 int score;
 int i;
 for (i = 0; i < 10;) {
     cin >> score;
-    if (score>0 && score<101) {
+    if (score>=0 && score<=100) {
         staticArray[i]=score;
-        i=i+1;
+        i++;
     }
     else {
         cin >> score;
     }
 }
-int findMax(const int staticArray[], int maxVal);
+int maxValue=findMax(staticArray,10);
+cout << "Highest score: " << maxValue << endl;
+int minValue=findMin(staticArray,10);
+cout << "Lowest score: " << minValue << endl;
+float averageVal=calculateAverage(staticArray,10);
+cout << "Average score: " << averageVal << endl;
 }
+
+float vectorAverage(const vector<int>& vec) {
+/**
+ * @brief Calculate the average with the vector list.
+ * @param using the vector and the size of itself.
+ * @return vegAvg average value.
+ */
+int sum = 0;
+for (int value : vec) {
+    sum = sum + value;
+}
+float vecAvg = sum/vec.size();
+return vecAvg;
+}
+
+int vectorMax(const vector<int>& vec) {
+/**
+ * @brief Calculate the maximum value from the vector list.
+ * @param Limited by size of vector.
+ * @return  Reutrns maxVec
+ */
+int maxVec= vec[0];
+for (int i = 0; i < vec.size(); i++) {
+    if (vec[i] >maxVec) {
+    maxVec=vec[i];
+    }
+}
+return maxVec;
+}
+
+int vectorMin(const vector<int>& vec) {
+/**
+ * @brief finds the MINIMUM vector value
+ * @param limited by size of vector
+ * @return minVal, the smallest value
+ */
+int minVal = vec[0];
+    for (size_t i = 1; i < vec.size(); i++) {
+        if (vec[i] < minVal) {
+            minVal = vec[i];
+        }
+    }
+    return minVal;
+}
+
+void vectorSolution() {
+/**
+ * @brief Calculates the statistics using a dynamic vector.
+ * @param None.
+ * @return None (void).
+ */
+vector<int> vectorList{};
+int userinput=0;
+cout << "Please enter scores one at a time, and enter '-1' to indicate you are done." << endl;
+while (userinput != -1) {
+    cin >> userinput;
+    if (userinput>=0 && userinput<=100) {
+        vectorList.push_back(userinput);
+    }
+    else if (userinput == -1) {
+        cout << "exit value detected" <<endl;
+    }
+    else {
+        cout << "invalid value. Please try again." << endl;
+    }
+}
+int maxVec=vectorMax(vectorList);
+cout << "Highest score: " << maxVec << endl;
+int minVec=vectorMin(vectorList);
+cout << "Lowest score: " << minVec << endl;
+float averageVec=vectorAverage(vectorList);
+cout << "Average score: " << averageVec << endl;
+}
+
 int main() {
  /**
- * @brief This is the main page of the program, allowing for user choice
- * @param
- * @return
+ * @brief This is the main page of the program, allowing for user choice.
+ * @param None.
+ * @return 0 to indicate success.
  */
 int choice;
 cin >> choice;
 if (choice==1) {
-    cout << "choice 1" <<endl;
+    cout << "Array calculation" <<endl;
     arraySolution();
 }
 else if (choice==2) {
-    cout << "choice 2" <<endl;
+    cout << "Vector calculation" <<endl;
+    vectorSolution();
 }
-else {
-return 0;
+else if (choice==0) {
+    cout << "Quit selected. Goodbye." << endl;
+}
+else while (choice>2 || choice<0) {
+    cout << "Please pick a different option" << endl;
+    cin >> choice;
 }
 }
