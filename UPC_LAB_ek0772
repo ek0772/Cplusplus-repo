@@ -1,0 +1,92 @@
+/**
+ * @file Exercise1_username.cpp
+ * @author ek0772
+ * @date 2026-03-08
+ * @brief This program validates UPC-A numbers using the check digit algorithm
+ */
+
+
+
+#include <string>
+#include <iostream>
+using namespace std;
+char answer;
+string UPC;
+int inputdigit;
+string validity;
+int digit;
+
+
+string inputter(string UPC) { 
+    /**
+ * @brief Function to validate 
+ * @param
+ * @return
+ */
+    cout <<"Please input the first 11 digits of the UPC code." << endl;
+    cin >> UPC;
+    cout <<"Please input the last digit of the UPC code." << endl;
+    cin >> inputdigit;
+    return UPC;
+}
+
+int validator(string UPC) {
+/**
+ * @brief Function to validate 
+ * @param UPC
+ * @return calculated checksum digit for the UPC code
+ */
+cout << "Validating UPC..." << endl;
+int sumodd = (UPC[0]-'0') + (UPC[2]-'0') + (UPC[4]-'0') + (UPC[6]-'0') + (UPC[8]-'0') + (UPC[10]-'0');
+digit=sumodd*3;
+int sumeven = (UPC[1]-'0') + (UPC[3]-'0') + (UPC[5]-'0') + (UPC[7]-'0') + (UPC[9]-'0');
+int total = sumeven+digit;
+int modulo = total %10;
+if (modulo == 0) {
+    digit=0;
+}
+else {
+    digit=10-modulo;
+}
+return digit;
+}
+int comparison(int inputdigit, int digit) {
+/**
+ * @brief Function to compare given and expected checksum values and output valitity
+ * @param inputdigit and digit
+ * @return void
+ */
+cout << "The expected checksum digit is "<<digit << endl;
+cout << "The provided checksum digit is "<<inputdigit << endl;
+if (digit==inputdigit){
+    cout << "The UPC code is VALID." << endl;
+}
+else {
+    cout << "The UPC code is INVALID." << endl;
+}
+return 0;
+}
+
+int main () {
+while (true) {
+    cout << "Do you have a number to test?" << endl;
+    cout << "Please input y or n" << endl;
+    cin >> answer;
+        if (answer=='y') {
+            UPC=inputter(UPC);
+            cout << "The inputted UPC is:"<<endl;
+            cout << UPC << endl;
+            validator(UPC);
+            comparison(inputdigit,digit);
+            cout << "Restarting program for repeaded input..." << endl;
+        }
+
+        else if (answer=='n') {
+            cout << "Okay." << endl;
+            return 0;
+        }
+        else {
+            cout << "Invalid reponse. Resetting..." << endl;
+        }
+}
+}
