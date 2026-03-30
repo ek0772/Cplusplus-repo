@@ -14,20 +14,20 @@ int main() {
     int& refToStack = stackInt;
 
     cout << "Stack Variable (stackInt):" << endl;
-    cout << "  Value: " << stackInt << endl;
-    cout << "  Address: " << &stackInt << endl;
+    cout << "Value: " << stackInt << endl;
+    cout << "Address: " << &stackInt << endl;
 
     cout << "Heap Variable (heapInt):" << endl;
-    cout << "  Value: " << *heapInt << endl;
-    cout << "  Address: " << heapInt << endl;
+    cout << "Value: " << *heapInt << endl;
+    cout << "Address: " << heapInt << endl;
 
     cout << "Pointer to Stack (ptrToStack):" << endl;
-    cout << "  Value Pointed To: " << *ptrToStack << endl;
-    cout << "  Address Stored: " << ptrToStack << endl;
+    cout << "Value Pointed To: " << *ptrToStack << endl;
+    cout << "Address: " << ptrToStack << endl;
 
     cout << "Reference to Stack (refToStack):" << endl;
-    cout << "  Value Referred To: " << refToStack << endl;
-    cout << "  Address: " << &refToStack << endl;
+    cout << "Value Referred To: " << refToStack << endl;
+    cout << "Address: " << &refToStack << endl;
 
     delete heapInt;
     return 0;
