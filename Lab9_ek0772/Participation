@@ -1,0 +1,22 @@
+/*
+*Participation:Elijah K
+*In your own words, explain what inheritance is and why it's
+useful. Imagine you're talking to someone who has no
+background in programming like a friend or family member.
+You can use simple, everyday examples to help make your
+explanation clear.
+*
+*Inheritance is the process of data and information being passed down 
+*from a parent class or object to its child. It’s the concept that if 
+*there is data associated with an item, and that item is duplicated, 
+*the data associated with the original will also be attached to the new 
+*item. In C++, the inherited data is dependent on the public and private
+* members of the class. For example, if I has a giant wheel of cheese, 
+*and I took a large chunk from it, it would still have the original 
+*qualities of the full cheese, but I could use the smaller piece to add 
+*it to a recipe, altering the smaller piece of the original cheese. Perhaps
+* a better example is if I have a picture that has a bunch of metadata 
+*attached to it, and I wanted to copy the file completely, the new copy 
+*would have the metadata from the original image, such as location, time 
+*taken, and device used.
+*/
