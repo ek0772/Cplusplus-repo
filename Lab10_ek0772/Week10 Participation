@@ -1,0 +1,14 @@
+"""Programs don’t always keep everything in memory.
+Sometimes they need to save information so it can be
+used later. That’s where files come in.
+• For this activity, explain why files are important in
+programming. Why might a program need to read from or
+write to a file? Think about everyday apps or tools you
+use that store information between uses, like a notes app,
+a game that saves your progress, or a budget tracker.
+• You don’t need to mention code. Just focus on the
+concept and how it applies to real-life situations."""
+
+Programs often have a purpose for the user. In this course, we've been focused on theoretical structures to theoretical programs, so we have't had to worry about what the output of our programs would be used for, but for a real, industry developed program, the user would want to be able to have some sort of save feature so that their experience could be kept track of, whether for recordkeeping or understanding. For example, a player playing a game probably doesn't need a reciept because the experience is meant to be expereinced, rather than used for some sort of important function that needs to be kept track of, like a writing program or a workplace communication app, where the user would want a record of the input given to the program.
+
+Storing/saving that information allows the user to share it with others, and if the program is changing or compiling information given to it, the user would want a copy of the output. Think of how you'd get a reciept for buying something at the store, but you wouldn't make a list or get a receipt of items you were just glancing at.
