@@ -12,6 +12,7 @@ using namespace std;
 
 string sentence = "";
 char c;
+char continuation='y';
 
 class MorseCodeTranslator
 {
@@ -115,10 +116,17 @@ void Inputformatter::Inputformatted(string sentence)
 
 int main()
 {
+    while (continuation == 'y')
+    {
     // Welcome message and prompt for user input, collecting sentence to be translated into morse code.
     cout << "Welcome to the translation program!" << endl;
     cout << "Please enter a sentence (less than 50 characters) to translate into morse code: " << endl;
     getline(cin, sentence);
+    while (sentence.length() > 50)
+    {
+        cout << "Sentence is too long. Please enter a sentence less than 50 characters: " << endl;
+        getline(cin, sentence);
+    }
     cout << "Your sentence in english is: " << sentence << endl;
 
     Inputformatter formatter;
@@ -129,6 +137,9 @@ int main()
     translator.Translation(sentence);
 
     cout << endl << "Translation complete!" << endl;
-        return 0;
+    cout << "Translate another sentence? Input y for yes, other input will terminate the program: ";
+    cin >> continuation;
+    cin.ignore();
+}
 }
 
