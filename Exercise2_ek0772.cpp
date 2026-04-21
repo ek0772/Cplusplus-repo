@@ -13,39 +13,13 @@ using namespace std;
 string sentence = "";
 char c;
 
-int main()
+class MorseCodeTranslator
 {
-    // Welcome message and prompt for user input, collecting sentence to be translated into morse code.
-    cout << "Welcome to the translation program!" << endl;
-    cout << "Please enter a sentence (less than 50 characters) to translate into morse code: " << endl;
-    getline(cin, sentence);
-    cout << "Your sentence in english is: " << sentence << endl;
-
-    //Format sentence to be all uppercase and remove whitespace and non-alphabetic characters.
-    for (int i = 0; i < sentence.length(); i++)
-    {
-        if (sentence[i] >= 'a' && sentence[i] <= 'z')
-        {
-            sentence[i] = toupper(sentence[i]);
-        }
-        else if (sentence[i] >= 'A' && sentence[i] <= 'Z')
-        {
-            //Do nothing.
-        }
-        else if (sentence[i] == ' ')
-        {
-            sentence.erase(i, 1);
-            i--;
-        }
-        else
-        {
-            sentence.erase(i, 1);
-            i--;
-        }
-    }
-    cout << "Sentence formatted for translation: " << sentence << endl;
-
-    // Loop through each character in the sentence and translate it into morse code, outputting the result.
+public:
+    void Translation(string sentence);
+};
+void MorseCodeTranslator::Translation(string sentence)
+{// Loop through each character in the sentence and translate it into morse code, outputting the result.
     for (int i = 0; i < sentence.length(); i++)
         {
         char c = sentence[i];
@@ -102,11 +76,59 @@ int main()
         else if (c == 'Z')
             cout << "--.. ";
 
+    }}
+
+
+class Inputformatter
+{
+public:
+    void Inputformatted(string sentence);
+};
+void Inputformatter::Inputformatted(string sentence)
+{
+//Format sentence to be all uppercase and remove whitespace and non-alphabetic characters.
+    for (int i = 0; i < sentence.length(); i++)
+    {
+        if (sentence[i] >= 'a' && sentence[i] <= 'z')
+        {
+            sentence[i] = toupper(sentence[i]);
+        }
+        else if (sentence[i] >= 'A' && sentence[i] <= 'Z')
+        {
+            //Do nothing.
+        }
+        else if (sentence[i] == ' ')
+        {
+            sentence.erase(i, 1);
+            i--;
+        }
+        else
+        {
+            sentence.erase(i, 1);
+            i--;
+        }
     }
+    cout << "Sentence formatted for translation: " << sentence << endl;
+    return;
+}
 
 
+int main()
+{
+    // Welcome message and prompt for user input, collecting sentence to be translated into morse code.
+    cout << "Welcome to the translation program!" << endl;
+    cout << "Please enter a sentence (less than 50 characters) to translate into morse code: " << endl;
+    getline(cin, sentence);
+    cout << "Your sentence in english is: " << sentence << endl;
 
-cout << endl << "Translation complete!" << endl;
-    return 0;
+    Inputformatter formatter;
+    formatter.Inputformatted(sentence);
+    
+
+    MorseCodeTranslator translator;
+    translator.Translation(sentence);
+
+    cout << endl << "Translation complete!" << endl;
+        return 0;
 }
 
