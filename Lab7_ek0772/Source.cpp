@@ -4,8 +4,13 @@
 *@date 3/15/2026
 *@brief A basic banking system, with focus on class and object implimentation.
 */
-#include<iostream>
+#include <iostream>
+#include <string>
+
 #include "Account.h"
+#include "Customer.h"
+#include "Account.cpp"
+#include "Customer.cpp"
 
 void printMenu();
 int getMenuOption();
@@ -17,6 +22,7 @@ const int DEPOSIT = 1;
 const int WITHDRAWAL = 2;
 const int CLOSE_OF_BUSINESS = 3;
 const int QUIT = 4;
+double amount;
 
 int main()
 {
@@ -67,18 +73,11 @@ int main()
             TODO: Add the code that interacts with the account object to perform
             the close of business account balancing.
             */
-                double totalDeposits = accumulate(deposits.begin(), deposits.end(), 0.0);
-                double totalWithdrawals = accumulate(withdrawals.begin(), withdrawals.end(), 0.0);
 
-                double previousBalance = balance;
-                double newBalance = previousBalance + totalDeposits - totalWithdrawals;
+            printSummary(previousBalance, totalDeposits, totalWithdrawals, newBalance);
 
-                printSummary(previousBalance, totalDeposits, totalWithdrawals, newBalance);
-
-                balance = newBalance;
-
-                deposits.clear();
-                withdrawals.clear();
+            deposits.clear();
+            withdrawals.clear();
             
             break;
         }

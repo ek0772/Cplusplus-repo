@@ -21,6 +21,7 @@ public:
     Account();
     Account(const string& accNum, double initialBalance, const Customer& customer);
 
+    double amount;
     bool deposit(double amount);
     bool withdraw(double amount);
 

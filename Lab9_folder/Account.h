@@ -6,8 +6,14 @@
 #include "Customer.h"
 using namespace std;
 
+
+/*
+*Update the acocunt class.
+*/
 class Account {
 private:
+
+protected:
     string accountNumber;
     double balance;
     Customer owner;
@@ -23,15 +29,34 @@ public:
 
     bool deposit(double amount);
     bool withdraw(double amount);
-
-    void closeOfBusiness();
+    
+    /* Make virtual*/
+    virtual void closeOfBusiness();
 
     double getBalance() const;
     string getAccountNumber() const;
     Customer getCustomer() const;
 
-    void printAccountInfo() const;
+    /* Make virtual*/
+    virtual void printAccountInfo() const;
     void printTransactions() const;
 };
+
+
+
+/*
+*Create a savings account class.
+*/
+class SavingsAccount : public Account {
+    private: 
+        double dailyInterestRate;
+    public:
+        SavingsAccount(const string& accNum, double initialBalance, const Customer& customer, double rate);
+        /* override */
+        void closeOfBusiness() override;
+        void printAccountInfo() const override;
+        
+};
+
 
 #endif
