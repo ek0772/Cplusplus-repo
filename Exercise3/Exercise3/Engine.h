@@ -15,6 +15,7 @@ private:
     const int WORD_LEN = 4;
     const int NUM_LIVES = 10;
 
+    //The pointers below are reset in engine.cpp
     WordGenerator* wordGenerator;
     Validator* validation;
     CatsAndCougars* catsAndCougars;

@@ -8,7 +8,7 @@ Engine::Engine()
 }
 
 /*
-TODO: deallocate any pointers used by this class
+:)TODO: deallocate any pointers used by this class
 */
 Engine::~Engine()
 {
@@ -47,10 +47,14 @@ void Engine::play()
 				winner = true;
 				break;
 			}
-			else
+			if (!didPlayerWin(hiddenWord, playerGuess))
 			{
 				incorrectGuess(hiddenWord, playerGuess);
 				currentRound++;
+			}
+			else
+			{
+				cout << "PLAY FUNCTION LOGIC ERROR. DID PLAYER WIN?" << endl;
 			}
 		}
 
@@ -100,7 +104,7 @@ string Engine::getPlayerGuess(int currentRound)
 
 void Engine::playerWins()
 {
-	cout << "Congratulations! You guessed correctly!" << endl;
+	cout << "Wow good job! You guessed correctly, you're a pro!" << endl;
 }
 
 bool Engine::didPlayerWin(string hiddenWord, string playerGuess)
@@ -110,13 +114,15 @@ bool Engine::didPlayerWin(string hiddenWord, string playerGuess)
 
 void Engine::playerLoses()
 {
-	cout << "You lost but don't get discouraged!" << endl;
+	cout << "Womp womp! You Lose!" << endl;
 }
 
 void Engine::incorrectGuess(string hiddenWord, string playerGuess)
 {
 	catsAndCougars->count(hiddenWord, playerGuess);
-	cout << "Sorry, " << playerGuess << " is not the hidden word. You have " <<
+	cout << "WROOOONG, " << playerGuess << " is not the hidden word. You have " <<
 		catsAndCougars->getCats() << " Cats and " << catsAndCougars->getCougars() <<
-		" Cougars." << endl;
+		" Cougars this round." << endl;
+
+	cout << "Across all rounds, you have " << catsAndCougars->getTotalCats() << " Cats and " << catsAndCougars->getTotalCougars() << " Cougars." << endl;
 }

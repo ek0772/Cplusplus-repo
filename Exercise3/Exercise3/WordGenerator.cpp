@@ -32,10 +32,6 @@ string WordGenerator::getRandomizedWord()
 	};
 
 	string word = words[getRandomNumber()];
-	if (isDebug)
-	{
-		cout << "Hidden word is " << word << endl;
-	}
 
 	return word;
 }
